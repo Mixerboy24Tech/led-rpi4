@@ -1,0 +1,12 @@
+[Unit]
+Description=MixerLED (c)Mixerboy24Tech
+
+[Service]
+WorkingDirectory=/home/pi
+User=root
+Type=forking
+ExecStart=/usr/bin/tmux new-session -s MixerLED -d '/bin/sh led.sh'
+ExecStop=/bin/sleep 2
+
+[Install]
+WantedBy=multi-user.target
